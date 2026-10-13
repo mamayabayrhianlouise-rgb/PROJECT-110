@@ -1,4 +1,3 @@
-
 const quoteText = document.querySelector("#quote");
 const authorText = document.querySelector("#author");
 const loadingText = document.querySelector("#loading");
@@ -33,7 +32,9 @@ async function getQuote() {
         quoteBox.classList.add("pop");
 
     } catch (error) {
-        errorMessage.textContent = "Could not fetch a quote. Please try again.";
+        errorMessage.textContent = navigator.onLine
+            ? "Could not fetch a quote. Please try again."
+            : "No internet connection. Please check your connection and try again.";
         errorMessage.classList.remove("hidden");
         console.error(error);
 
