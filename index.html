@@ -1,30 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quotezy | One Quote. One Thought. One Better Day.</title>
+    <title>Quotezy | Group Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
     <header>
-        <nav class="navbar">
+        <div class="navbar">
             <div class="logo">QUOTEZY</div>
-
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="main.html">About</a>
-                <a href="main.html#how-it-works">How It Works</a>
-                <a href="#team">Our Team</a>
-                <a href="app.html" class="nav-button">Get a Quote</a>
-            </div>
-        </nav>
+            <nav class="nav-links">
+                <a href="#project">Project</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#team">Team</a>
+                <a href="app.html">Try the App</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
     <main class="hero">
         <div class="hero-left">
             <p class="small-label">— GROUP PORTFOLIO —</p>
@@ -58,7 +53,6 @@
         </div>
     </main>
 
-    <!-- OUR PROJECT -->
     <section class="home-intro" id="project">
         <p class="small-label">OUR PROJECT</p>
 
@@ -71,25 +65,94 @@
 
         <p>
             <strong>Main goal:</strong>
-            Our project aims to create a simple website that shows random quotes. 
-            We use HTML to build the website, CSS to design its appearance, 
+            Our project aims to create a simple website that shows random quotes.
+            We use HTML to build the website, CSS to design its appearance,
             and JavaScript to make it work with a public API.
         </p>
 
-        <a href="main.html" class="text-link">
+        <a href="app.html" class="text-link">
             DISCOVER QUOTEZY <span>➜</span>
         </a>
     </section>
 
-    <!-- TEAM PROFILES -->
+    <section class="about-hero">
+        <p class="small-label">— ABOUT QUOTEZY —</p>
+        <h2>
+            A small quote<br>
+            can change<br>
+            your perspective.
+        </h2>
+        <p>
+            Quotezy is a simple random quote generator made to
+            help you discover meaningful thoughts quickly and
+            easily.
+        </p>
+    </section>
+
+    <section class="goal-section">
+        <div class="section-number">01</div>
+        <div class="goal-content">
+            <p class="small-label">OUR PROJECT</p>
+            <h2>The goal is simple.</h2>
+            <p>
+                Instead of searching through many websites, users
+                click one button and receive a brand new quote
+                from a public API.
+            </p>
+            <p>
+                We wanted the app to feel clean and enjoyable
+                while showing how HTML, CSS, JavaScript, and an
+                API work together.
+            </p>
+        </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+        <div class="section-heading">
+            <p class="small-label">HOW IT WORKS —</p>
+            <h2>Three simple steps.</h2>
+        </div>
+
+        <div class="steps">
+            <article class="step-card">
+                <span>01</span>
+                <h3>Click</h3>
+                <p>Press the Get a Quote button to request a new quote.</p>
+            </article>
+
+            <article class="step-card">
+                <span>02</span>
+                <h3>Fetch</h3>
+                <p>JavaScript sends a request to the public quote API.</p>
+            </article>
+
+            <article class="step-card">
+                <span>03</span>
+                <h3>Discover</h3>
+                <p>The quote and author appear right on the page.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="api-section">
+        <p class="small-label">— THE API —</p>
+        <h2>Powered by a public quote API.</h2>
+        <p>
+            API used: <strong>DummyJSON Quotes</strong><br>
+            Documentation:
+            <a href="https://dummyjson.com/docs/quotes" target="_blank" rel="noopener">
+                dummyjson.com/docs/quotes
+            </a>
+        </p>
+    </section>
+
     <section class="team-section" id="team">
         <p class="small-label">— OUR TEAM —</p>
 
-       <h2>Three minds align.<br>One goal, one design.</h2>
+        <h2>Three minds align.<br>One goal, one design.</h2>
 
         <div class="team-grid">
 
-            <!-- MEMBER 1 -->
             <article class="member-card">
                 <div class="member-image-container">
                     <img src="images/member1.jpg"
@@ -99,20 +162,20 @@
                 <div class="member-info">
                     <p class="small-label">TEAM MEMBER 01</p>
                     <h3>Rhian Louise Mamayabay</h3>
-                    <h4>HTML &amp; Structure</h4>
+                    <h4>HTML &amp; Structure | Project Documentation</h4>
 
                     <p>
                         Responsible for organizing the page content
                         and building the website structure using HTML.
+                        Also prepared the project documentation and README.
                     </p>
                 </div>
             </article>
-
-            <!-- MEMBER 2 -->
+            
             <article class="member-card">
                 <div class="member-image-container">
                     <img src="images/member2.jpg"
-                         alt="Photo of Team Member 2">
+                         alt="Photo of Charles Andre Reyes">
                 </div>
 
                 <div class="member-info">
@@ -127,11 +190,10 @@
                 </div>
             </article>
 
-            <!-- MEMBER 3 -->
             <article class="member-card">
                 <div class="member-image-container">
                     <img src="images/member3.png"
-                         alt="Photo of Team Member 3">
+                         alt="Photo of Althea Marie Nuñez">
                 </div>
 
                 <div class="member-info">
@@ -149,7 +211,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <span>© 2026 Quotezy</span>
         <span>One Quote. One Thought. One Better Day.</span>
