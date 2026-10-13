@@ -1,9 +1,12 @@
 /* =========================================
    QUOTEZY - MODERN QUOTE WEBSITE
-   Theme: Burgundy, Cream, and Gold
+   Theme: Burgundy, Cream, Gold
    ========================================= */
 
+/* ---------- GOOGLE FONTS ---------- */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
 
 /* ---------- COLOR VARIABLES ---------- */
 
@@ -11,16 +14,25 @@
     --burgundy: #801d32;
     --burgundy-dark: #3b101b;
     --burgundy-light: #a7354b;
+
     --cream: #f8f3eb;
+    --cream-dark: #eee4d8;
+
     --white: #ffffff;
     --gold: #d7b778;
+
     --text: #292326;
     --muted: #777078;
+
     --border: #e9dfd4;
+
     --shadow: 0 15px 45px rgba(59, 16, 27, 0.10);
 }
 
-/* ---------- RESET ---------- */
+
+/* =========================================
+   RESET
+   ========================================= */
 
 * {
     margin: 0;
@@ -45,6 +57,10 @@ a {
     text-decoration: none;
 }
 
+button {
+    font-family: inherit;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -54,36 +70,44 @@ section {
     scroll-margin-top: 100px;
 }
 
+
 /* =========================================
-   NAVIGATION BAR
+   NAVIGATION
    ========================================= */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     width: 100%;
+
     background: rgba(248, 243, 235, 0.96);
     border-bottom: 1px solid rgba(128, 29, 50, 0.12);
+
     backdrop-filter: blur(14px);
 }
 
 .navbar {
     max-width: 1240px;
     min-height: 82px;
+
     margin: auto;
     padding: 18px 35px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 25px;
 }
 
 .logo {
     color: var(--burgundy);
+
     font-size: 1.65rem;
     font-weight: 700;
+
     letter-spacing: 3px;
     white-space: nowrap;
 }
@@ -91,6 +115,7 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 28px;
 }
 
@@ -98,30 +123,33 @@ header {
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+
     transition: color 0.25s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
     color: var(--burgundy-light);
 }
 
-.nav-links .nav-button {
-    padding: 12px 22px;
-    background: var(--burgundy);
-    color: var(--white);
-    border: 1px solid var(--burgundy);
-    transition: all 0.25s ease;
-}
-
-.nav-links .nav-button:hover {
-    background: transparent;
-    color: var(--burgundy);
-    transform: translateY(-2px);
-}
 
 /* =========================================
-   HERO SECTION
+   SMALL LABEL
+   ========================================= */
+
+.small-label {
+    margin-bottom: 20px;
+
+    color: var(--burgundy-light);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =========================================
+   HOME HERO
    ========================================= */
 
 .hero {
@@ -130,44 +158,49 @@ header {
 
     max-width: 1240px;
     min-height: 570px;
+
     margin: 40px auto 90px;
     padding: 80px 8%;
 
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
+
     align-items: center;
     gap: 45px;
 
     overflow: hidden;
+
     border-radius: 8px;
 
     color: var(--white);
 
-    /* Background image + dark overlay */
     background-image:
         linear-gradient(
             90deg,
-            rgba(49, 13, 23, 0.91) 0%,
-            rgba(77, 19, 34, 0.78) 48%,
-            rgba(77, 19, 34, 0.38) 100%
+            rgba(49, 13, 23, 0.91),
+            rgba(77, 19, 34, 0.78),
+            rgba(77, 19, 34, 0.38)
         ),
-        url('images/quote-background.jpg');
+        url('./images/quote-background.jpg');
 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
-    /* Fallback color */
     background-color: var(--burgundy-dark);
+
+    box-shadow: var(--shadow);
 }
 
-/* Oversized decorative quotation mark */
+
+/* Decorative quote */
 
 .hero::before {
     content: "“";
 
     position: absolute;
     z-index: -1;
+
     top: -150px;
     right: 4%;
 
@@ -186,38 +219,27 @@ header {
     z-index: 1;
 }
 
-/* Small section labels */
-
-.small-label {
-    margin-bottom: 20px;
-
-    color: var(--burgundy-light);
-
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-}
-
 .hero .small-label {
     color: var(--gold);
 }
 
-/* Main heading */
-
 .hero h1 {
     max-width: 650px;
+
     margin-bottom: 25px;
+
+    font-family: 'Playfair Display', serif;
 
     font-size: clamp(2.8rem, 5vw, 4.6rem);
     font-weight: 700;
+
     line-height: 1.12;
     letter-spacing: -2px;
 }
 
-/* Hero paragraph */
-
 .hero-description {
     max-width: 480px;
+
     margin-bottom: 32px;
 
     color: rgba(255, 255, 255, 0.85);
@@ -226,16 +248,21 @@ header {
     line-height: 1.9;
 }
 
-/* Main hero button */
+
+/* =========================================
+   HERO BUTTON
+   ========================================= */
 
 .hero-button {
     width: fit-content;
     min-width: 205px;
+
     padding: 15px 20px;
 
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 28px;
 
     background: var(--white);
@@ -243,6 +270,7 @@ header {
 
     font-size: 0.76rem;
     font-weight: 700;
+
     letter-spacing: 1.5px;
 
     transition: all 0.3s ease;
@@ -256,12 +284,15 @@ header {
 .hero-button:hover {
     background: var(--gold);
     color: var(--burgundy-dark);
+
     transform: translateY(-4px);
+
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+
 /* =========================================
-   QUOTE ARTWORK
+   HERO QUOTE SHAPE
    ========================================= */
 
 .hero-right {
@@ -274,6 +305,7 @@ header {
     width: 100%;
     max-width: 340px;
     min-height: 310px;
+
     padding: 35px;
 
     display: flex;
@@ -282,12 +314,15 @@ header {
     justify-content: center;
 
     border: 1px solid rgba(255, 255, 255, 0.3);
+
     background: rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(5px);
 
     text-align: center;
 
     transform: rotate(2deg);
+
     transition: transform 0.3s ease;
 }
 
@@ -301,7 +336,9 @@ header {
     color: var(--gold);
 
     font-family: 'Playfair Display', serif;
+
     font-size: 10rem;
+
     line-height: 1;
 }
 
@@ -309,41 +346,49 @@ header {
     margin-top: 15px;
 
     font-family: 'Playfair Display', serif;
+
     font-size: 1.3rem;
     font-weight: 600;
+
     line-height: 1.8;
+
     letter-spacing: 3px;
 }
 
+
 /* =========================================
-   PROJECT INTRODUCTION
+   PROJECT INTRO
    ========================================= */
 
 .home-intro {
     max-width: 850px;
+
     margin: 0 auto 110px;
     padding: 0 30px;
 
     text-align: center;
 }
 
-.home-intro h2,
-.team-section > h2 {
+.home-intro h2 {
     margin-bottom: 25px;
 
     color: var(--burgundy-dark);
 
     font-family: 'Playfair Display', serif;
+
     font-size: clamp(2.1rem, 4vw, 3.3rem);
     font-weight: 600;
+
     line-height: 1.25;
 }
 
 .home-intro > p:not(.small-label) {
     max-width: 720px;
+
     margin: 15px auto;
 
     color: var(--muted);
+
     font-size: 0.95rem;
 }
 
@@ -351,7 +396,10 @@ header {
     color: var(--text);
 }
 
-/* Discover Quotezy link */
+
+/* =========================================
+   TEXT LINK
+   ========================================= */
 
 .text-link {
     margin-top: 25px;
@@ -359,6 +407,7 @@ header {
 
     display: inline-flex;
     align-items: center;
+
     gap: 20px;
 
     border-bottom: 2px solid var(--burgundy);
@@ -367,6 +416,7 @@ header {
 
     font-size: 0.76rem;
     font-weight: 700;
+
     letter-spacing: 1.5px;
 
     transition: all 0.25s ease;
@@ -381,6 +431,298 @@ header {
     color: var(--burgundy-light);
 }
 
+
+/* =========================================
+   ABOUT HERO
+   ========================================= */
+
+.about-hero {
+    position: relative;
+    isolation: isolate;
+
+    overflow: hidden;
+
+    max-width: 1240px;
+    min-height: 490px;
+
+    margin: 40px auto 0;
+    padding: 85px 9%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(215, 183, 120, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            var(--burgundy-dark),
+            var(--burgundy),
+            #6d2035
+        );
+
+    color: var(--white);
+}
+
+.about-hero::after {
+    content: "“";
+
+    position: absolute;
+    z-index: -1;
+
+    top: -125px;
+    right: 4%;
+
+    color: rgba(255, 255, 255, 0.06);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 30rem;
+
+    line-height: 1;
+}
+
+.about-hero .small-label {
+    color: var(--gold);
+}
+
+.about-hero h2 {
+    max-width: 750px;
+
+    margin-bottom: 25px;
+
+    color: var(--white);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 600;
+
+    line-height: 1.12;
+
+    letter-spacing: -1.5px;
+}
+
+.about-hero > p:last-child {
+    max-width: 590px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   GOAL SECTION
+   ========================================= */
+
+.goal-section {
+    max-width: 1100px;
+
+    margin: 0 auto;
+    padding: 105px 35px;
+
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 55px;
+}
+
+.section-number {
+    color: var(--burgundy-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 6rem;
+
+    line-height: 1;
+
+    border-bottom: 2px solid var(--gold);
+
+    padding-bottom: 20px;
+}
+
+.goal-content h2 {
+    margin-bottom: 22px;
+
+    color: var(--burgundy-dark);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+
+    line-height: 1.25;
+}
+
+.goal-content > p:not(.small-label) {
+    max-width: 720px;
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 0.96rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+
+.how-section {
+    padding: 90px 35px 100px;
+
+    background: var(--cream-dark);
+}
+
+.section-heading {
+    max-width: 1160px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: var(--burgundy-dark);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.1rem, 4vw, 3.3rem);
+
+    line-height: 1.25;
+}
+
+.steps {
+    max-width: 1160px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.step-card {
+    min-height: 240px;
+
+    padding: 35px 30px;
+
+    background: var(--white);
+
+    border: 1px solid rgba(128, 29, 50, 0.08);
+
+    box-shadow: 0 10px 30px rgba(59, 16, 27, 0.06);
+
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow);
+}
+
+.step-card > span {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--burgundy);
+
+    color: var(--gold);
+
+    font-family: 'Playfair Display', serif;
+}
+
+.step-card h3 {
+    margin-bottom: 12px;
+
+    color: var(--burgundy-dark);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.6rem;
+}
+
+.step-card p {
+    color: var(--muted);
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   API SECTION
+   ========================================= */
+
+.api-section {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.api-section h2 {
+    margin-bottom: 25px;
+
+    color: var(--burgundy-dark);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.api-section > p:last-child {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    line-height: 2;
+}
+
+.api-section strong {
+    color: var(--burgundy);
+}
+
+.api-section a {
+    color: var(--burgundy-light);
+
+    font-weight: 700;
+
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+
+    overflow-wrap: anywhere;
+}
+
+.api-section a:hover {
+    color: var(--burgundy-dark);
+}
+
+
 /* =========================================
    TEAM SECTION
    ========================================= */
@@ -388,64 +730,68 @@ header {
 .team-section {
     padding: 90px 35px 110px;
 
-    background: #eee4d8;
+    background: var(--cream-dark);
 
     text-align: center;
 }
 
-.team-section > .small-label {
-    margin-bottom: 15px;
-}
-
 .team-section > h2 {
     margin-bottom: 55px;
-}
 
-/* Three member cards */
+    color: var(--burgundy-dark);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.1rem, 4vw, 3.3rem);
+
+    line-height: 1.25;
+}
 
 .team-grid {
     max-width: 1160px;
+
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns: repeat(3, 1fr);
+
     gap: 28px;
 
     text-align: left;
 }
 
-/* Individual card */
-
 .member-card {
-    min-width: 0;
     overflow: hidden;
 
     background: var(--white);
+
     border: 1px solid rgba(128, 29, 50, 0.08);
+
     box-shadow: var(--shadow);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .member-card:hover {
     transform: translateY(-8px);
+
     box-shadow: 0 22px 45px rgba(59, 16, 27, 0.16);
 }
 
-/* Member image container */
+
+/* =========================================
+   MEMBER IMAGE
+   ========================================= */
 
 .member-image-container {
     width: 100%;
     height: 320px;
+
     overflow: hidden;
 
     background: #dfd0c3;
-
 }
-
-/* Actual member images */
 
 .member-image-container img {
     width: 100%;
@@ -454,15 +800,24 @@ header {
     display: block;
 
     object-fit: cover;
+
     object-position: center;
 
+    transition: transform 0.4s ease;
+}
+
+.member-card:nth-child(2) .member-image-container img {
+    object-position: center 40%;
 }
 
 .member-card:hover .member-image-container img {
     transform: scale(1.05);
 }
 
-/* Member details */
+
+/* =========================================
+   MEMBER INFORMATION
+   ========================================= */
 
 .member-info {
     padding: 28px 25px 32px;
@@ -472,6 +827,7 @@ header {
     margin-bottom: 12px;
 
     font-size: 0.65rem;
+
     letter-spacing: 1.7px;
 }
 
@@ -481,10 +837,10 @@ header {
     color: var(--burgundy-dark);
 
     font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
-    line-height: 1.4;
 
-    overflow-wrap: anywhere;
+    font-size: 1.35rem;
+
+    line-height: 1.4;
 }
 
 .member-info h4 {
@@ -493,7 +849,9 @@ header {
     color: var(--burgundy-light);
 
     font-size: 0.78rem;
+
     font-weight: 700;
+
     letter-spacing: 0.5px;
 }
 
@@ -501,8 +859,10 @@ header {
     color: var(--muted);
 
     font-size: 0.87rem;
+
     line-height: 1.8;
 }
+
 
 /* =========================================
    FOOTER
@@ -512,11 +872,14 @@ header {
     padding: 30px 35px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     gap: 20px;
 
     background: var(--burgundy-dark);
+
     color: rgba(255, 255, 255, 0.8);
 
     font-size: 0.78rem;
@@ -524,14 +887,410 @@ header {
 
 .footer span:first-child {
     color: var(--gold);
+
     font-weight: 700;
 }
 
+
 /* =========================================
-   TABLET RESPONSIVENESS
+   QUOTE GENERATOR PAGE
+   ========================================= */
+
+.quote-main {
+    position: relative;
+    isolation: isolate;
+
+    width: calc(100% - 40px);
+    max-width: 1100px;
+
+    min-height: 620px;
+
+    margin: 45px auto 65px;
+
+    padding: 75px 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    color: var(--white);
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(215, 183, 120, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            var(--burgundy-dark),
+            var(--burgundy),
+            #652033
+        );
+
+    box-shadow: var(--shadow);
+}
+
+
+/* Decorative quote marks */
+
+.quote-main::before {
+    content: "“";
+
+    position: absolute;
+
+    top: -95px;
+    left: 2%;
+
+    color: rgba(255, 255, 255, 0.055);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 24rem;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+.quote-main::after {
+    content: "”";
+
+    position: absolute;
+
+    right: 3%;
+    bottom: -210px;
+
+    color: rgba(215, 183, 120, 0.08);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 25rem;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* Quote label */
+
+.quote-label {
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* Quote title */
+
+.quote-title {
+    margin-bottom: 35px;
+
+    color: var(--white);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================
+   QUOTE DISPLAY CARD
+   ========================================= */
+
+.quote-display {
+    position: relative;
+
+    width: 100%;
+    max-width: 760px;
+
+    min-height: 220px;
+
+    margin: 0 auto 22px;
+
+    padding: 55px 45px 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(215, 183, 120, 0.65);
+
+    border-radius: 5px;
+
+    color: var(--text);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.quote-display::before {
+    content: "“";
+
+    position: absolute;
+
+    top: -5px;
+    left: 22px;
+
+    color: var(--burgundy-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 5rem;
+
+    line-height: 1;
+}
+
+#quote {
+    max-width: 650px;
+
+    color: var(--burgundy-dark);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+
+    font-weight: 500;
+
+    line-height: 1.65;
+
+    overflow-wrap: anywhere;
+}
+
+#author {
+    color: var(--burgundy-light);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button-row {
+    margin-top: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.reveal-button,
+.copy-button {
+    min-height: 50px;
+
+    padding: 14px 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 2px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.reveal-button {
+    min-width: 205px;
+
+    background: var(--gold);
+
+    color: var(--burgundy-dark);
+}
+
+.reveal-button strong {
+    font-size: 1.3rem;
+
+    font-weight: 400;
+}
+
+.reveal-button:hover {
+    background: var(--white);
+
+    border-color: var(--white);
+
+    transform: translateY(-3px);
+}
+
+.copy-button {
+    min-width: 140px;
+
+    background: transparent;
+
+    color: var(--white);
+}
+
+.copy-button:hover {
+    background: var(--white);
+
+    color: var(--burgundy);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   BUTTON FOCUS / DISABLED
+   ========================================= */
+
+.reveal-button:focus-visible,
+.copy-button:focus-visible {
+    outline: 3px solid var(--white);
+
+    outline-offset: 4px;
+}
+
+.reveal-button:disabled,
+.copy-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   QUOTE COUNTER
+   ========================================= */
+
+.quote-counter {
+    margin-top: 28px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 0.85rem;
+}
+
+#quoteCount {
+    margin-left: 5px;
+
+    color: var(--gold);
+
+    font-size: 1rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   QUOTE MESSAGE
+   ========================================= */
+
+.quote-message {
+    margin-top: 10px;
+
+    color: var(--gold);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   LOADING / ERROR
+   ========================================= */
+
+.loading {
+    margin: 0 0 12px;
+
+    color: var(--gold);
+
+    font-size: 0.9rem;
+}
+
+.error-message {
+    max-width: 650px;
+
+    margin: 0 0 15px;
+
+    padding: 12px 18px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-left: 3px solid #ffc0b8;
+
+    color: #ffe4df;
+
+    font-size: 0.88rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   QUOTE PAGE FOOTER
+   ========================================= */
+
+.quote-main + .footer {
+    margin-top: auto;
+}
+
+
+/* =========================================
+   TABLET
    ========================================= */
 
 @media (max-width: 950px) {
+
     .navbar {
         padding: 18px 25px;
     }
@@ -546,7 +1305,9 @@ header {
 
     .hero {
         margin: 25px 20px 75px;
+
         padding: 65px 5%;
+
         gap: 25px;
     }
 
@@ -556,27 +1317,57 @@ header {
 
     .quote-shape {
         min-height: 260px;
+
         padding: 20px;
     }
 
-    .member-image-container {
-        height: 230px;
+    .about-hero {
+        margin: 25px 20px 0;
+
+        padding: 70px 6%;
     }
 
-    .member-info {
-        padding: 22px 18px 25px;
+    .goal-section {
+        grid-template-columns: 100px 1fr;
+
+        gap: 35px;
+
+        padding: 80px 30px;
+    }
+
+    .section-number {
+        font-size: 4.5rem;
+    }
+
+    .member-image-container {
+        height: 260px;
+    }
+
+    .quote-main {
+        min-height: 580px;
+
+        padding: 65px 30px;
+    }
+
+    .quote-display {
+        max-width: 680px;
     }
 }
 
+
 /* =========================================
-   MOBILE RESPONSIVENESS
+   MOBILE
    ========================================= */
 
 @media (max-width: 680px) {
+
+    /* Navigation */
+
     .navbar {
         padding: 18px 20px;
 
         flex-direction: column;
+
         gap: 16px;
     }
 
@@ -587,9 +1378,10 @@ header {
     .nav-links {
         width: 100%;
 
-        display: flex;
         justify-content: center;
+
         flex-wrap: wrap;
+
         gap: 12px 18px;
     }
 
@@ -597,20 +1389,22 @@ header {
         font-size: 0.72rem;
     }
 
-    .nav-links .nav-button {
-        padding: 9px 13px;
-    }
+
+    /* Hero */
 
     .hero {
         margin: 18px 12px 70px;
+
         padding: 55px 25px;
 
         grid-template-columns: 1fr;
+
         gap: 40px;
     }
 
     .hero h1 {
         font-size: clamp(2.6rem, 11vw, 3.8rem);
+
         letter-spacing: -1.5px;
     }
 
@@ -624,11 +1418,13 @@ header {
 
     .quote-shape {
         max-width: 300px;
+
         min-height: 240px;
     }
 
     .big-quote {
         height: 85px;
+
         font-size: 8rem;
     }
 
@@ -636,21 +1432,113 @@ header {
         font-size: 1.1rem;
     }
 
+
+    /* Project */
+
     .home-intro {
         margin-bottom: 75px;
+
         padding: 0 22px;
     }
 
-    .home-intro h2,
-    .team-section > h2 {
+    .home-intro h2 {
         font-size: 2.2rem;
     }
+
+
+    /* About */
+
+    .about-hero {
+        min-height: 430px;
+
+        margin: 18px 12px 0;
+
+        padding: 55px 25px;
+    }
+
+    .about-hero h2 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+
+        letter-spacing: -1px;
+    }
+
+    .about-hero > p:last-child {
+        font-size: 0.9rem;
+    }
+
+
+    /* Goal */
+
+    .goal-section {
+        padding: 65px 25px;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .section-number {
+        width: fit-content;
+
+        padding-bottom: 12px;
+
+        font-size: 3.5rem;
+    }
+
+    .goal-content h2 {
+        font-size: 2.3rem;
+    }
+
+
+    /* How it works */
+
+    .how-section {
+        padding: 70px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 2.3rem;
+    }
+
+    .steps {
+        max-width: 430px;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .step-card {
+        min-height: auto;
+
+        padding: 28px;
+    }
+
+
+    /* API */
+
+    .api-section {
+        padding: 70px 22px;
+    }
+
+    .api-section h2 {
+        font-size: 2.1rem;
+    }
+
+
+    /* Team */
 
     .team-section {
         padding: 70px 20px;
     }
 
     .team-section > h2 {
+        font-size: 2.2rem;
+
         margin-bottom: 35px;
     }
 
@@ -658,6 +1546,7 @@ header {
         max-width: 430px;
 
         grid-template-columns: 1fr;
+
         gap: 25px;
     }
 
@@ -669,21 +1558,89 @@ header {
         padding: 25px;
     }
 
+
+    /* Quote generator */
+
+    .quote-main {
+        width: calc(100% - 24px);
+
+        min-height: 560px;
+
+        margin: 20px auto 45px;
+
+        padding: 50px 20px;
+
+        border-radius: 5px;
+    }
+
+    .quote-label {
+        font-size: 0.67rem;
+
+        letter-spacing: 2px;
+    }
+
+    .quote-title {
+        margin-bottom: 28px;
+
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+
+    .quote-display {
+        min-height: 220px;
+
+        padding: 48px 22px 28px;
+
+        gap: 18px;
+    }
+
+    .quote-display::before {
+        left: 12px;
+
+        font-size: 4rem;
+    }
+
+    #quote {
+        font-size: 1.25rem;
+    }
+
+    #author {
+        font-size: 0.78rem;
+    }
+
+    .button-row {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .reveal-button,
+    .copy-button {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
+
+    /* Footer */
+
     .footer {
         padding: 25px 20px;
 
         flex-direction: column;
+
         gap: 8px;
 
         text-align: center;
     }
 }
 
+
 /* =========================================
    SMALL PHONES
    ========================================= */
 
 @media (max-width: 380px) {
+
     .nav-links {
         gap: 10px 12px;
     }
@@ -703,873 +1660,26 @@ header {
     .member-image-container {
         height: 250px;
     }
+
+    .quote-title {
+        font-size: 2.4rem;
+    }
 }
+
 
 /* =========================================
    ACCESSIBILITY
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
         scroll-behavior: auto !important;
+
         transition-duration: 0.01ms !important;
+
         animation-duration: 0.01ms !important;
-    }
-}
-
-
-/* =========================================
-   QUOTEZY - QUOTE GENERATOR PAGE
-   ========================================= */
-
-.quote-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: var(--cream);
-}
-
-/* Quote navigation */
-
-.quote-navbar .nav-button.active {
-    background: var(--burgundy-dark);
-    color: var(--gold);
-}
-
-/* Main quote generator area */
-
-.quote-main {
-    position: relative;
-    isolation: isolate;
-
-    width: calc(100% - 40px);
-    max-width: 1100px;
-    min-height: 620px;
-
-    margin: 45px auto 65px;
-    padding: 75px 35px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-    border-radius: 8px;
-
-    color: var(--white);
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(215, 183, 120, 0.18),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            var(--burgundy-dark),
-            var(--burgundy),
-            #652033
-        );
-
-    box-shadow: var(--shadow);
-}
-
-/* Decorative quotation marks */
-
-.quote-main::before {
-    content: "“";
-
-    position: absolute;
-    z-index: -1;
-    top: -95px;
-    left: 2%;
-
-    color: rgba(255, 255, 255, 0.055);
-    font-family: 'Playfair Display', serif;
-    font-size: 24rem;
-    line-height: 1;
-
-    pointer-events: none;
-}
-
-.quote-main::after {
-    content: "”";
-
-    position: absolute;
-    z-index: -1;
-    right: 3%;
-    bottom: -210px;
-
-    color: rgba(215, 183, 120, 0.08);
-    font-family: 'Playfair Display', serif;
-    font-size: 25rem;
-    line-height: 1;
-
-    pointer-events: none;
-}
-
-/* Small label */
-
-.quote-label {
-    margin-bottom: 15px;
-
-    color: var(--gold);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-/* Page heading */
-
-.quote-title {
-    margin-bottom: 35px;
-
-    color: var(--white);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 6vw, 4.8rem);
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -1px;
-}
-
-/* Quote result card */
-
-.quote-display {
-    position: relative;
-
-    width: 100%;
-    max-width: 760px;
-    min-height: 220px;
-
-    margin: 0 auto 22px;
-    padding: 55px 45px 35px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    background: rgba(255, 255, 255, 0.97);
-    border: 1px solid rgba(215, 183, 120, 0.65);
-    border-radius: 5px;
-
-    color: var(--text);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
-}
-
-/* Decorative quotation mark on card */
-
-.quote-display::before {
-    content: "“";
-
-    position: absolute;
-    top: -5px;
-    left: 22px;
-
-    color: var(--burgundy-light);
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    line-height: 1;
-}
-
-/* Quote text */
-
-#quote {
-    max-width: 650px;
-
-    color: var(--burgundy-dark);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    font-weight: 500;
-    line-height: 1.65;
-
-    overflow-wrap: anywhere;
-}
-
-/* Quote author */
-
-#author {
-    color: var(--burgundy-light);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* Button container */
-
-.button-row {
-    margin-top: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-/* Shared button styling */
-
-.reveal-button,
-.copy-button {
-    min-height: 50px;
-    padding: 14px 22px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 22px;
-
-    border: 1px solid var(--gold);
-    border-radius: 2px;
-
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.reveal-button {
-    min-width: 205px;
-
-    background: var(--gold);
-    color: var(--burgundy-dark);
-}
-
-.reveal-button strong {
-    font-size: 1.3rem;
-    font-weight: 400;
-}
-
-.reveal-button:hover {
-    background: var(--white);
-    border-color: var(--white);
-    transform: translateY(-3px);
-}
-
-.copy-button {
-    min-width: 140px;
-
-    background: transparent;
-    color: var(--white);
-}
-
-.copy-button:hover {
-    background: var(--white);
-    color: var(--burgundy);
-    transform: translateY(-3px);
-}
-
-.reveal-button:focus-visible,
-.copy-button:focus-visible {
-    outline: 3px solid var(--white);
-    outline-offset: 4px;
-}
-
-.reveal-button:disabled,
-.copy-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* Quote counter */
-
-.quote-counter {
-    margin-top: 28px;
-
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.85rem;
-}
-
-#quoteCount {
-    margin-left: 5px;
-
-    color: var(--gold);
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-/* Closing message */
-
-.quote-message {
-    margin-top: 10px;
-
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-style: italic;
-}
-
-/* Loading and error messages */
-
-.loading {
-    margin: 0 0 12px;
-
-    color: var(--gold);
-    font-size: 0.9rem;
-}
-
-.error-message {
-    max-width: 650px;
-    margin: 0 0 15px;
-    padding: 12px 18px;
-
-    background: rgba(255, 255, 255, 0.1);
-    border-left: 3px solid #ffc0b8;
-
-    color: #ffe4df;
-    font-size: 0.88rem;
-}
-
-.hidden {
-    display: none !important;
-}
-
-/* Footer */
-
-.quote-footer {
-    margin-top: auto;
-    padding: 28px 35px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-
-    background: var(--burgundy-dark);
-    color: rgba(255, 255, 255, 0.8);
-
-    font-size: 0.78rem;
-}
-
-.quote-footer span:first-child {
-    color: var(--gold);
-    font-weight: 700;
-}
-
-/* Quote page tablet layout */
-
-@media (max-width: 950px) {
-    .quote-main {
-        min-height: 580px;
-        padding: 65px 30px;
-    }
-
-    .quote-display {
-        max-width: 680px;
-    }
-}
-
-/* Quote page mobile layout */
-
-@media (max-width: 680px) {
-    .quote-main {
-        width: calc(100% - 24px);
-        min-height: 560px;
-
-        margin: 20px auto 45px;
-        padding: 50px 20px;
-
-        border-radius: 5px;
-    }
-
-    .quote-label {
-        font-size: 0.67rem;
-        letter-spacing: 2px;
-    }
-
-    .quote-title {
-        margin-bottom: 28px;
-        font-size: clamp(2.5rem, 10vw, 3.5rem);
-    }
-
-    .quote-display {
-        min-height: 220px;
-        padding: 48px 22px 28px;
-        gap: 18px;
-    }
-
-    .quote-display::before {
-        left: 12px;
-        font-size: 4rem;
-    }
-
-    #quote {
-        font-size: 1.25rem;
-    }
-
-    #author {
-        font-size: 0.78rem;
-    }
-
-    .button-row {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .reveal-button,
-    .copy-button {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .quote-counter {
-        margin-top: 24px;
-    }
-
-    .quote-footer {
-        padding: 24px 20px;
-
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-    }
-}
-
-/* =========================================
-   QUOTEZY - ABOUT PAGE
-   ========================================= */
-
-/* About hero */
-
-.about-hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    min-height: 490px;
-    max-width: 1240px;
-
-    margin: 40px auto 0;
-    padding: 85px 9%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(215, 183, 120, 0.16),
-            transparent 30%
-        ),
-        linear-gradient(
-            120deg,
-            var(--burgundy-dark),
-            var(--burgundy),
-            #6d2035
-        );
-
-    color: var(--white);
-}
-
-/* Large background quotation mark */
-
-.about-hero::after {
-    content: "“";
-
-    position: absolute;
-    z-index: -1;
-    top: -125px;
-    right: 4%;
-
-    color: rgba(255, 255, 255, 0.06);
-    font-family: 'Playfair Display', serif;
-    font-size: 30rem;
-    line-height: 1;
-
-    pointer-events: none;
-}
-
-.about-hero .small-label {
-    color: var(--gold);
-}
-
-.about-hero h2 {
-    max-width: 750px;
-    margin-bottom: 25px;
-
-    color: var(--white);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 600;
-    line-height: 1.12;
-    letter-spacing: -1.5px;
-}
-
-.about-hero > p:last-child {
-    max-width: 590px;
-
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 1rem;
-    line-height: 1.9;
-}
-
-/* =========================================
-   PROJECT GOAL SECTION
-   ========================================= */
-
-.goal-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 105px 35px;
-
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 55px;
-    align-items: start;
-}
-
-/* Large section number */
-
-.section-number {
-    color: var(--burgundy-light);
-
-    font-family: 'Playfair Display', serif;
-    font-size: 6rem;
-    font-weight: 500;
-    line-height: 1;
-
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 20px;
-}
-
-.goal-content .small-label {
-    margin-bottom: 15px;
-}
-
-.goal-content h2 {
-    margin-bottom: 22px;
-
-    color: var(--burgundy-dark);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1.25;
-}
-
-.goal-content > p:not(.small-label) {
-    max-width: 720px;
-    margin-bottom: 18px;
-
-    color: var(--muted);
-    font-size: 0.96rem;
-    line-height: 1.9;
-}
-
-/* =========================================
-   HOW IT WORKS
-   ========================================= */
-
-.how-section {
-    padding: 90px 35px 100px;
-    background: #eee4d8;
-}
-
-.section-heading {
-    max-width: 1160px;
-    margin: 0 auto 45px;
-    text-align: center;
-}
-
-.section-heading .small-label {
-    margin-bottom: 15px;
-}
-
-.section-heading h2 {
-    color: var(--burgundy-dark);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.1rem, 4vw, 3.3rem);
-    line-height: 1.25;
-}
-
-/* Three step cards */
-
-.steps {
-    max-width: 1160px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.step-card {
-    position: relative;
-    min-width: 0;
-    min-height: 240px;
-
-    padding: 35px 30px;
-
-    background: var(--white);
-    border: 1px solid rgba(128, 29, 50, 0.08);
-    box-shadow: 0 10px 30px rgba(59, 16, 27, 0.06);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.step-card:hover {
-    transform: translateY(-7px);
-    box-shadow: var(--shadow);
-}
-
-.step-card > span {
-    width: 46px;
-    height: 46px;
-    margin-bottom: 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--burgundy);
-    color: var(--gold);
-
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-}
-
-.step-card h3 {
-    margin-bottom: 12px;
-
-    color: var(--burgundy-dark);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-}
-
-.step-card p {
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-/* =========================================
-   API INFORMATION
-   ========================================= */
-
-.api-section {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 100px 30px;
-
-    text-align: center;
-}
-
-.api-section .small-label {
-    margin-bottom: 15px;
-}
-
-.api-section h2 {
-    margin-bottom: 25px;
-
-    color: var(--burgundy-dark);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.3;
-}
-
-.api-section > p:last-child {
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 2;
-}
-
-.api-section strong {
-    color: var(--burgundy);
-}
-
-.api-section a {
-    display: inline-block;
-    color: var(--burgundy-light);
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    overflow-wrap: anywhere;
-}
-
-.api-section a:hover {
-    color: var(--burgundy-dark);
-}
-
-/* =========================================
-   FINAL CALL TO ACTION
-   ========================================= */
-
-.final-cta {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    margin: 0 auto 70px;
-    padding: 75px 25px;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(215, 183, 120, 0.15),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            var(--burgundy-dark),
-            var(--burgundy)
-        );
-
-    text-align: center;
-    color: var(--white);
-}
-
-.final-cta .small-label {
-    color: var(--gold);
-}
-
-.final-cta h2 {
-    margin-bottom: 30px;
-
-    color: var(--white);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 600;
-    line-height: 1.25;
-}
-
-.final-cta .hero-button {
-    margin: 0 auto;
-}
-
-/* =========================================
-   ABOUT PAGE - TABLET
-   ========================================= */
-
-@media (max-width: 950px) {
-    .about-hero {
-        margin: 25px 20px 0;
-        padding: 70px 6%;
-    }
-
-    .goal-section {
-        grid-template-columns: 100px 1fr;
-        gap: 35px;
-        padding: 80px 30px;
-    }
-
-    .section-number {
-        font-size: 4.5rem;
-    }
-
-    .step-card {
-        padding: 28px 22px;
-    }
-}
-
-/* =========================================
-   ABOUT PAGE - MOBILE
-   ========================================= */
-
-@media (max-width: 680px) {
-    .about-hero {
-        min-height: 430px;
-        margin: 18px 12px 0;
-        padding: 55px 25px;
-    }
-
-    .about-hero h2 {
-        font-size: clamp(2.5rem, 10vw, 3.5rem);
-        letter-spacing: -1px;
-    }
-
-    .about-hero > p:last-child {
-        font-size: 0.9rem;
-    }
-
-    .goal-section {
-        padding: 65px 25px;
-
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .section-number {
-        width: fit-content;
-        padding-bottom: 12px;
-        font-size: 3.5rem;
-    }
-
-    .goal-content h2 {
-        font-size: 2.3rem;
-    }
-
-    .how-section {
-        padding: 70px 20px;
-    }
-
-    .section-heading {
-        margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-        font-size: 2.3rem;
-    }
-
-    .steps {
-        max-width: 430px;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .step-card {
-        min-height: auto;
-        padding: 28px;
-    }
-
-    .step-card > span {
-        margin-bottom: 18px;
-    }
-
-    .api-section {
-        padding: 70px 22px;
-    }
-
-    .api-section h2 {
-        font-size: 2.1rem;
-    }
-
-    .final-cta {
-        margin-bottom: 45px;
-        padding: 65px 22px;
-    }
-
-    .final-cta h2 {
-        font-size: 2.4rem;
-    }
-}
-
-/* =========================================
-   QUOTE POP ANIMATION
-   ========================================= */
-
-.quote-display.pop {
-    animation: pop 0.4s ease;
-}
-
-@keyframes pop {
-    0% {
-        transform: scale(0.96);
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
     }
 }
