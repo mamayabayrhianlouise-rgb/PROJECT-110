@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,28 +6,18 @@
     <title>Quotezy | Get a Quote</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
 
-<body class="quote-page">
-
-    <!-- NAVIGATION -->
     <header>
-        <nav class="navbar quote-navbar">
+        <div class="navbar">
             <div class="logo">QUOTEZY</div>
-
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="main.html">About</a>
-                <a href="main.html#how-it-works">How It Works</a>
-                <a href="index.html#team">Our Team</a>
-                <a href="app.html" class="nav-button active">
-                    Get a Quote
-                </a>
-            </div>
-        </nav>
+            <nav class="nav-links">
+                <a href="index.html">← Back to Portfolio</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- QUOTE GENERATOR -->
-    <main class="quote-main">
+    <main class="quote-main" id="app">
 
         <p class="quote-label">— YOUR DAILY QUOTE —</p>
 
@@ -36,7 +25,6 @@
             A Quote<br>For Your Day.
         </h1>
 
-        <!-- QUOTE RESULT -->
         <div class="quote-display" aria-live="polite">
             <p id="quote">
                 Click the button below to discover a quote.
@@ -45,17 +33,14 @@
             <p id="author">— Quotezy</p>
         </div>
 
-        <!-- LOADING MESSAGE -->
         <p id="loading" class="loading hidden">
             Fetching your quote...
         </p>
 
-        <!-- ERROR MESSAGE -->
         <p id="errorMessage"
            class="error-message hidden"
            role="alert"></p>
 
-        <!-- BUTTONS -->
         <div class="button-row">
 
             <button type="button"
@@ -73,7 +58,6 @@
 
         </div>
 
-        <!-- QUOTE COUNTER -->
         <p class="quote-counter">
             Quotes discovered:
             <span id="quoteCount">0</span>
@@ -85,8 +69,7 @@
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="quote-footer">
+    <footer class="footer">
         <span>© 2026 Quotezy</span>
         <span>One Quote. One Thought. One Better Day.</span>
     </footer>
