@@ -23,7 +23,8 @@ async function getQuote() {
         if (!data.quote?.trim() || !data.author?.trim())
             throw new Error("Missing quote");
 
-        quoteText.textContent = data.quote;
+        let quote = data.quote.toLowerCase();
+        quoteText.textContent = quote.charAt(0).toUpperCase() + quote.slice(1);
         authorText.textContent = "— " + data.author;
         quoteCountText.textContent = ++quoteCount;
 
