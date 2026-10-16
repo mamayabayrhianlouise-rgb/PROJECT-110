@@ -24,7 +24,10 @@ async function getQuote() {
             throw new Error("Missing quote");
 
         let quote = data.quote.toLowerCase();
-        quoteText.textContent = quote.charAt(0).toUpperCase() + quote.slice(1);
+        quote = quote.replace(/(^\w|[.!?]\s+\w)/g, letter => letter.toUpperCase());
+        quote = quote.replace(/\bi\b/g, "I");
+
+        quoteText.textContent = quote;
         authorText.textContent = "— " + data.author;
         quoteCountText.textContent = ++quoteCount;
 
